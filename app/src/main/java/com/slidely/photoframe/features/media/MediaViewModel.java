@@ -1,10 +1,10 @@
 package com.slidely.photoframe.features.media;
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
-import android.arch.lifecycle.OnLifecycleEvent;
-import android.arch.lifecycle.ViewModel;
-import android.support.annotation.Nullable;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.ViewModel;
+import androidx.annotation.Nullable;
 
 import com.slidely.photoframe.model.Media;
 import com.slidely.photoframe.repository.MediaRepository;

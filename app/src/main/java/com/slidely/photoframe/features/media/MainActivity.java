@@ -1,19 +1,11 @@
 package com.slidely.photoframe.features.media;
 
 import android.Manifest;
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.os.StrictMode;
 import android.transition.TransitionManager;
 import android.util.SparseIntArray;
 import android.view.Gravity;
@@ -33,6 +25,16 @@ import com.slidely.photoframe.model.Media;
 import com.slidely.photoframe.repository.RepositoryProvider;
 import com.tomerrosenfeld.customanalogclockview.CustomAnalogClock;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProviders;
+
 public class MainActivity extends AppCompatActivity implements MediaView {
     public static final String URI_KEY = "uri";
     private Handler handler = new Handler();
@@ -40,14 +42,14 @@ public class MainActivity extends AppCompatActivity implements MediaView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                 .detectAll()
                 .penaltyLog()
                 .build());
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
                 .detectAll()
                 .penaltyLog()
-                .build());*/
+                .build());
         setContentView(R.layout.activity_main);
         CustomAnalogClock customAnalogClock = findViewById(R.id.analog_clock);
         customAnalogClock.setAutoUpdate(true);
@@ -75,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements MediaView {
             }
         });
         ActionBar actionBar = getSupportActionBar();
-        //noinspection ConstantConditions
         actionBar.hide();
         findViewById(R.id.media_fragment).setOnClickListener((v) -> {
             if (actionBar.isShowing())
@@ -102,7 +103,8 @@ public class MainActivity extends AppCompatActivity implements MediaView {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
             startSlideShow();
     }

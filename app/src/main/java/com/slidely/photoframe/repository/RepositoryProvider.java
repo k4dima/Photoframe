@@ -1,7 +1,7 @@
 package com.slidely.photoframe.repository;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public final class RepositoryProvider {
     private static MediaRepository mediaRepository;

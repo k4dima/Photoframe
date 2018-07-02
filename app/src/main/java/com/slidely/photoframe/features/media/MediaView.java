@@ -1,6 +1,6 @@
 package com.slidely.photoframe.features.media;
 
-import android.arch.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.slidely.photoframe.model.Media;
 
