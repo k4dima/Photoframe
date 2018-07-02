@@ -22,7 +22,6 @@ public class MediaViewModelFactory extends ViewModelProvider.NewInstanceFactory 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        //noinspection unchecked
         return (T) new MediaViewModel(mediaView, mediaRepository, preferenceRepository);
     }
 }
