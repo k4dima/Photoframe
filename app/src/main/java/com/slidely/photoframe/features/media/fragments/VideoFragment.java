@@ -14,7 +14,7 @@ import com.yqritc.scalablevideoview.ScalableVideoView;
 
 import java.io.IOException;
 
-import static com.slidely.photoframe.features.media.MediaActivity.URI_KEY;
+import static com.slidely.photoframe.features.media.MainActivity.URI_KEY;
 
 public class VideoFragment extends Fragment {
     private ScalableVideoView videoView;

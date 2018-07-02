@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.slidely.photoframe.R;
 
-import static com.slidely.photoframe.features.media.MediaActivity.URI_KEY;
+import static com.slidely.photoframe.features.media.MainActivity.URI_KEY;
 
 public class ImageFragment extends Fragment {
     @Nullable

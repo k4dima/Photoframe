@@ -33,7 +33,7 @@ import com.slidely.photoframe.model.Media;
 import com.slidely.photoframe.repository.RepositoryProvider;
 import com.tomerrosenfeld.customanalogclockview.CustomAnalogClock;
 
-public class MediaActivity extends AppCompatActivity implements MediaView {
+public class MainActivity extends AppCompatActivity implements MediaView {
     public static final String URI_KEY = "uri";
     private Handler handler = new Handler();
 

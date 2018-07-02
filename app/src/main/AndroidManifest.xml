@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".features.media.MediaActivity"
+            android:name=".features.media.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:launchMode="singleTask">
             <intent-filter>
@@ -22,6 +22,6 @@
             android:name=".features.preferences.PreferencesActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/menu_settings"
-            android:parentActivityName=".features.media.MediaActivity" />
+            android:parentActivityName=".features.media.MainActivity" />
     </application>
 </manifest>

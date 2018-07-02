@@ -22,17 +22,16 @@ import java.util.List;
 
 public class DefaultMediaRepository implements MediaRepository {
     private final AppCompatActivity activity;
-    private LoaderManager supportLoaderManager;
+    private LoaderManager loaderManager;
 
     DefaultMediaRepository(@NotNull AppCompatActivity activity) {
         this.activity = activity;
-        supportLoaderManager = activity.getSupportLoaderManager();
+        loaderManager = LoaderManager.getInstance(activity);
     }
 
     public void media(int offset, CompletedListener<List<Media>> completedListener) {
-        supportLoaderManager.initLoader((int) System.currentTimeMillis(), null,
+        loaderManager.initLoader((int) System.currentTimeMillis(), null,
                 new MediaLoader(offset, completedListener));
-
     }
 
     class MediaLoader implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -83,7 +82,7 @@ public class DefaultMediaRepository implements MediaRepository {
             }
             cursor.close();
             completedListener.completed(list);
-            supportLoaderManager.destroyLoader(loader.getId());
+            loaderManager.destroyLoader(loader.getId());
         }
     }
 }
