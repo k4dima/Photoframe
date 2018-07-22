@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">PhotoFrame</string>
+    <string name="app_name">Photo Frame</string>
     <string name="menu_settings">Settings</string>
     <string name="photo">Photo</string>
     <string name="no_media">No media</string>
+    <string name="permission">Storage permission needed to access photos and videos</string>
+    <string name="allow_access">Allow access</string>
+    <string name="speed_key" translatable="false">speed</string>
+    <string name="fullscreen_key" translatable="false">fullscreen</string>
+    <string name="clock_key" translatable="false">clock</string>
+    <string name="sound_key" translatable="false">sound</string>
 </resources>

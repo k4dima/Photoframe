@@ -1,7 +1,26 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditTextPreference
-        android:defaultValue="@integer/speed_default"
-        android:key="speed"
-        android:numeric="integer"
-        android:title="Slideshow speed in seconds" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory>
+        <EditTextPreference
+            android:inputType="number"
+            android:defaultValue="@integer/speed_default"
+            android:key="@string/speed_key"
+            android:title="Speed"
+            app:iconSpaceReserved="false" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/fullscreen_key"
+            android:title="Fullscreen on start"
+            app:iconSpaceReserved="false" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/clock_key"
+            android:title="Clock"
+            app:iconSpaceReserved="false" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/sound_key"
+            android:title="Sound"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
 </PreferenceScreen>
