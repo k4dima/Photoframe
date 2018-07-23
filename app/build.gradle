@@ -7,7 +7,8 @@ android {
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 20
-        versionName "2"
+        versionName '2'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     dataBinding {
         enabled = true
@@ -15,6 +16,11 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 dependencies {
@@ -38,6 +44,10 @@ dependencies {
     implementation 'androidx.preference:preference:1.0.0-beta01'
     implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    testImplementation "junit:junit:4.12"
-    testImplementation "org.robolectric:robolectric:3.8"
+    testImplementation 'androidx.arch.core:core-testing:2.0.0-beta01'
+    testImplementation 'org.mockito:mockito-core:2.19.0'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:3.8'
+    androidTestImplementation "androidx.test:runner:1.1.0-alpha3"
+    androidTestImplementation "androidx.test:rules:1.1.0-alpha3"
 }
