@@ -31,7 +31,6 @@ import io.reactivex.functions.Consumer
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
 
-
 class MainActivity : DaggerAppCompatActivity() {
     @Inject
     lateinit var preferences: PreferenceRepository

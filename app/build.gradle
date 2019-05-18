@@ -2,6 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 android {
+    signingConfigs {
+        config {
+            keyAlias 'photoframe'
+            keyPassword 'horizon'
+            storeFile file('keystore.jks')
+            storePassword 'horizon'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         minSdkVersion 19
@@ -22,6 +30,11 @@ android {
             includeAndroidResources = true
         }
     }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+        }
+    }
 }
 dependencies {
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
@@ -30,24 +43,24 @@ dependencies {
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-    implementation 'com.google.dagger:dagger-android-support:2.16'
-    kapt 'com.google.dagger:dagger-android-processor:2.16'
-    kapt 'com.google.dagger:dagger-compiler:2.16'
-    implementation 'com.google.android.material:material:1.0.0-beta01'
+    implementation 'com.google.dagger:dagger-android-support:2.17'
+    kapt 'com.google.dagger:dagger-android-processor:2.17'
+    kapt 'com.google.dagger:dagger-compiler:2.17'
+    implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.github.tbruyelle:rxpermissions:0.10.1'
-    implementation 'com.github.bumptech.glide:glide:4.8.0-SNAPSHOT'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.yqritc:android-scalablevideoview:1.0.4'
     implementation 'com.tomerrosenfeld.customanalogclockview:custom-analog-clock-view:1.1'
-    implementation 'androidx.fragment:fragment-ktx:1.0.0-beta01'
-    implementation 'androidx.core:core-ktx:1.0.0-beta01'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-beta01'
-    implementation 'androidx.preference:preference:1.0.0-beta01'
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.fragment:fragment-ktx:1.0.0'
+    implementation 'androidx.core:core-ktx:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.preference:preference:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    testImplementation 'androidx.arch.core:core-testing:2.0.0-beta01'
     testImplementation 'org.mockito:mockito-core:2.19.0'
-    testImplementation 'junit:junit:4.12'
     testImplementation 'org.robolectric:robolectric:3.8'
-    androidTestImplementation "androidx.test:runner:1.1.0-alpha3"
-    androidTestImplementation "androidx.test:rules:1.1.0-alpha3"
+    testImplementation 'androidx.arch.core:core-testing:2.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test:rules:1.1.0-alpha4'
 }
